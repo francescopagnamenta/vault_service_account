@@ -1,5 +1,5 @@
 
-# Service Account Manager with Vault and FastAPI
+# Service Account with FastAPI and Vault
 
 This is a simple backend service built using **FastAPI** that interacts with **HashiCorp Vault** for managing service accounts. It allows creating, retrieving, and validating service accounts stored in Vault. The backend is containerized using **Docker** and can be easily run using **Docker Compose**.
 
@@ -18,7 +18,7 @@ This is a simple backend service built using **FastAPI** that interacts with **H
 ### 1. Clone the Repository
 Start by cloning the repository to your local machine:
 ```bash
-git clone https://github.com/your-username/vault_service_accounts.git
+git clone git@github.com:francescopagnamenta/vault_service_account.git
 cd vault_service_accounts
 ```
 
