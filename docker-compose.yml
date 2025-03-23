@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  vault:
+    image: hashicorp/vault:latest
+    container_name: vault
+    environment:
+      - VAULT_DEV_ROOT_TOKEN_ID=myroot
+    ports:
+      - "8200:8200"
+    cap_add:
+      - IPC_LOCK
+    command: ["server", "-dev"]
+
+  service-account-api:
+    build:
+      context: .
+      dockerfile: service_account_api/Dockerfile
+    environment:
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=myroot
+    ports:
+      - "8000:8000"
+    depends_on:
+      - vault
